@@ -20,7 +20,7 @@ class Book {
     string bookType;
     time_t currentTime = time(nullptr);
     char* dueDate = ctime(&currentTime);
-
+    Member borrower;
 
     public:
     // get constructor and initilize book objects
