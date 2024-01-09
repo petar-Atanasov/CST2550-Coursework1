@@ -1,11 +1,12 @@
-#include <member.h>
+#include "member.h"
 using namespace std;
 
 // pass the constructor 
 Member::Member(int memberID, string name, string address,
-    string email) : booksLoaned() {
+    string email) {
 
     memberID = 0;
+    booksLoaned{};
     
 
 
