@@ -11,7 +11,7 @@ using namespace std;
 class Member {
 
     private: 
-    int memberId;
+    int memberID;
     vector<Book> booksLoaned;
 
     public:
