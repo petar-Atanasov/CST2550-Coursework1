@@ -3,8 +3,8 @@
 #define LIBRARIAN_H
 #include <iostream>
 #include <string>
-#include <book.h>
-#include <member.h>
+#include "book.h"
+#include "member.h"
 
 using namespace std;
 
@@ -19,13 +19,12 @@ class Librarian {
     Librarian(int staffID, string name, string address,
     string email, int salary);
 
-    // add member
-    void addMember();
-
     // other methods 
-    void issueBook(int memberID, int bookID);
+    void issueBook(int Member memberID, int bookID);
     void returnBook(int memberID, int bookID);
     void calcFine(int memberID);
+    // add member
+    void addMember();
 
     // show method
     void displayBorrowedBooks(int memberID);
