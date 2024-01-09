@@ -20,7 +20,7 @@ class Librarian {
     string email, int salary);
 
     // other methods 
-    void issueBook(int Member memberID, int bookID);
+    void issueBook(int memberID, int bookID);
     void returnBook(int memberID, int bookID);
     void calcFine(int memberID);
     // add member
