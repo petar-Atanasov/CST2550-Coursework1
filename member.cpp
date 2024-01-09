@@ -1,12 +1,18 @@
-#include <nember.h>
+#include <member.h>
 using namespace std;
 
 // pass the constructor 
 Member::Member(int memberID, string name, string address,
-    string email){
+    string email) : booksLoaned() {
+
+    memberID = 0;
+    
+
 
     //getter methods form member.h
-    string Member::getMemberID();    
+    string Member::getMemberID(){
+        return memberID;
+    }    
 
     vector<Book::Member> getBooksBorrowed();
 
