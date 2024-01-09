@@ -12,7 +12,7 @@ Book::Book(int bookID, string bookName, string authorFirstName,
     authorLastName = "";
     bookType = "";
     dueDate = "";
-    // to add borrower from Member class
+    borrower;
 
     //getter methods from book.h
     string Book::getbookID(){
