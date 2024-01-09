@@ -11,7 +11,7 @@ using namespace std;
 class Librarian {
 
     private: 
-    int staffId;
+    int staffID;
     int salary;
 
     public:
