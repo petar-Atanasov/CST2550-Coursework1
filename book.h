@@ -1,4 +1,7 @@
 #pragma once 
+#ifndef BOOK_H
+#define BOOK_H
+#include <member.h>
 #include <iostream>
 #include <string> 
 
@@ -13,7 +16,7 @@ class Book {
     string authorLastName;      // Author Last Name 
     string bookType;            // The book type#
     string dueDate;             // The due date of the book
-    //Member borrower;
+    Member borrower;
 
     public:
     // get constructor and initilize book objects
@@ -34,3 +37,4 @@ class Book {
     void returnBook();          //Return the occupied book
     void borrowBook();          //Borrowing a book
 };
+#endif // BOOK_H
