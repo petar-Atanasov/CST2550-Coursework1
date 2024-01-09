@@ -5,10 +5,25 @@ using namespace std;
 Librarian::Librarian(int staffID, string name, string address,
     string email, int salary){
     
-    staffId = 0;
+    staffID = 0;
     salary = 0;
 
+    // other methods 
+    void Librarian::issueBook(int memberID, int bookID);
+    void Librarian::returnBook(int memberID, int bookID);
+    void Librarian::calcFine(int memberID);
+    void Librarian::addMember();     
 
-    // other metrhods 
-    void  Librarian::issueBook(int Member memberID,) 
+    void Librarian::displayBorrowedBooks(int memberID);
+    // setter methods
+    void Librarian::setStaffID(int staffID);
+    void Librarian::setSalary(int salary);
+
+    //getter methods
+    int Librarian::getStaffID(){
+        return staffID;
     }
+    int Librarian::getSalary(){
+        return salary;
+    }
+}   
