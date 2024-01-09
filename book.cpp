@@ -43,7 +43,7 @@ Book::Book(int bookID, string bookName, string authorFirstName,
     // other methods from book.h
     void Book::returnBook(){
         dueDate = "";
-        // to put the borrowed member here
+        borrower;
     }
 
 
