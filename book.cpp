@@ -6,10 +6,10 @@ Book::Book(int bookID, string bookName, string authorFirstName,
     string authorLastName){
 
     // initilize member variables to default value for the cpp file
-    bookID = 0;
-    bookName = "";
-    authorFirstName = "";
-    authorLastName = "";
+    bookID = bookID;
+    bookName = bookName;
+    authorFirstName = authorFirstName;
+    authorLastName = authorLastName;
     bookType = "";
     dueDate = "";
     borrower;

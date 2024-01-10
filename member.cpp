@@ -5,7 +5,7 @@ using namespace std;
 Member::Member(int memberID, string name, string address,
     string email) {
 
-    memberID = 0;
+    memberID = memberID;
     booksLoaned{};
     
 

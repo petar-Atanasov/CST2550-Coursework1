@@ -5,8 +5,8 @@ using namespace std;
 Librarian::Librarian(int staffID, string name, string address,
     string email, int salary){
     
-    staffID = 0;
-    salary = 0;
+    staffID = staffID;
+    salary = salary;
 
     // other methods 
     void Librarian::issueBook(int memberID, int bookID);
