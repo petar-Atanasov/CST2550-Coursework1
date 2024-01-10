@@ -14,7 +14,7 @@ class Book {
     string bookName;            // Name of the book
     string authorFirstName;     // Author First Name
     string authorLastName;      // Author Last Name 
-    string bookType;            // The book type#
+    string bookType;            // The book type
     string dueDate;             // The due date of the book
     Member borrower;
 
