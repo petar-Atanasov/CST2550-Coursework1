@@ -17,9 +17,14 @@ using namespace std;
 int main(){
     
     ifstream file("library_book.csv");
-    if(file.)
-    // if(file.is_open()){
+    if(file.is_open()){
+        cout << "The file is open."
+    }
+    else {
+        file.fail();
+        cout << "The file failed to be open"
+    }
 
-    // }
+    
     return 0;
 };
