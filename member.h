@@ -24,7 +24,7 @@ class Member {
     vector<book> getBooksBorrowed();
 
     // setter methods
-    void setBooksBorrowed();
+    void* setBooksBorrowed(const book& book);
 };
 
 #endif // MEMBER_H
