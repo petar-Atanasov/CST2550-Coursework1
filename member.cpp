@@ -2,7 +2,7 @@
 using namespace std;
 
 // pass the constructor 
-Member::Member(int memberID, string name, string address,
+member::member(int memberID, string name, string address,
     string email) {
 
     memberID = memberID;
@@ -11,13 +11,13 @@ Member::Member(int memberID, string name, string address,
 
 
     //getter methods form member.h
-    string Member::getMemberID(){
+    string member::getMemberID(){
         return memberID;
     }    
 
-    vector<Book::Member> getBooksBorrowed();
+    vector<book::member> getBooksBorrowed();
 
     //setter methods from member.h
-    void Member::setBooksBorrowed(const Book& book)
+    void member::setBooksBorrowed(const Book& book)
 
 }

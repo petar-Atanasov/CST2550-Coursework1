@@ -16,7 +16,7 @@ class Member {
 
     public:
     // create the constructor and initilize member objects 
-    Member(int memberID, string name, string address,
+    member(int memberID, string name, string address,
      string email);
 
     // getter methods 
