@@ -6,7 +6,7 @@
 #include <string> 
 
 using namespace std;
-
+class Member;
 class Book {
     // private data members for the Book class
     private: 
@@ -14,9 +14,9 @@ class Book {
     string bookName;            // Name of the book
     string authorFirstName;     // Author First Name
     string authorLastName;      // Author Last Name 
-    string bookType;            // The book type
+    string bookType;            // The book type#
     string dueDate;             // The due date of the book
-    Member borrower;
+    Member* borrower;
 
     public:
     // get constructor and initilize book objects
