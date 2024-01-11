@@ -18,14 +18,18 @@ Person::Person(const string& name, const string& address, const string& email)
 
     //getter methods from person.h
     string Person::getName() const {
-        cout << "Enter your name"<< endl;
+        cout << "Enter your name. "<< endl;
         cin >> name;
 
         return name;
     }
     string Person::getAddress() const {
+        cout << "Enter your address. "<< endl;
+        cin >> address;
         return address;
     }
     string Person::getEmail() const {
+        cout << "Enter you email address. "<< endl;
+        cin >> email;
         return email;
     }
