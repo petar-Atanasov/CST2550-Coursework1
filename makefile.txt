@@ -4,8 +4,11 @@ CXXFLAGS = -g -Wall -Wextra - Wpedantic
 .PHONY : all
 all : main
 
-main : main.cpp book.o member.o librarian.o person.o
+program : main.o book.o member.o librarian.o person.o
     $(CXX) $(CXXFLAGS) -o $@ S^
+
+main.o : main.cpp 
+    $(CXX) $(CXXFLAGS) -c $<
 
 book.o : book.cpp book.h
     $(CXX) $(CXXFLAGS) -c $<
@@ -22,4 +25,4 @@ person.o : person.cpp person.h
 .PHONY : clean
 clean : 
     rm *.o
-    rm main
+    rm program
