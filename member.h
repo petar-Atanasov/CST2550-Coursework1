@@ -7,12 +7,12 @@
 #include <string>
 
 using namespace std;
-
+class Book;
 class Member {
 
     private: 
     int memberID;
-    vector<Book> booksLoaned;
+    vector<Book*> booksLoaned;
 
     public:
     // create the constructor and initilize member objects 
