@@ -16,7 +16,7 @@ class Member {
 
     public:
     // create the constructor and initilize member objects 
-    member(int memberID, string name, string address,
+    Member(int memberID, string name, string address,
      string email);
 
     // getter methods 
@@ -24,7 +24,7 @@ class Member {
     vector<book> getBooksBorrowed();
 
     // setter methods
-    void setBooksBorrowed(const book& book);
+    void setBooksBorrowed();
 };
 
 #endif // MEMBER_H
