@@ -18,6 +18,6 @@ member::Member(int memberID, string name, string address,
     vector<Book::Member> getBooksBorrowed();
 
     //setter methods from member.h
-    void* Member::setBooksBorrowed(const book& book)
+    void Member::setBooksBorrowed(const book& book)
 
 }
