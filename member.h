@@ -12,7 +12,7 @@ class Member {
 
     private: 
     int memberID;
-    vector<Book> booksLoaned;
+    vector<book> booksLoaned;
 
     public:
     // create the constructor and initilize member objects 
@@ -21,10 +21,10 @@ class Member {
 
     // getter methods 
     string getMemberID();
-    vector<Book> getBooksBorrowed();
+    vector<book> getBooksBorrowed();
 
     // setter methods
-    void setBooksBorrowed(const Book& book);
+    void setBooksBorrowed(const book& book);
 };
 
 #endif // MEMBER_H
