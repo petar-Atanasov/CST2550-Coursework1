@@ -1,23 +1,32 @@
 #include "member.h"
+#include "person.h"
 using namespace std;
 
 // pass the constructor 
-member::Member(int memberID, string name, string address,
-    string email) {
+Member::Member(int memberID, const string& name, const string& address,
+    const string& email) 
+    : memberID(memberID), Person(name, address, email) {
 
-    memberID = memberID;
-    booksLoaned{};
-    
+    // this-> memberID;
+    this-> setName(name);
+    this-> setAddress(address);
+    this-> setEmail(email);
 
+}
+// getter methods form member.h
+string Member::getMemberID() const
+{
+    string memid = to_string(memberID);
+    return memid;
+}
 
-    //getter methods form member.h
-    string Member::getMemberID(){
-        return memberID;
-    }    
+vector<Book> Member::getBooksBorrowed() const
+{
+    return booksLoaned;
+}
 
-    vector<Book::Member> getBooksBorrowed();
-
-    //setter methods from member.h
-    void Member::setBooksBorrowed(const book& book)
-
+// setter methods from member.h
+void Member::setBooksBorrowed(const Book& book)
+{
+    booksLoaned.push_back(book);
 }
