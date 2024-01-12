@@ -1,11 +1,12 @@
 #include "member.h"
-#include "person.h"
+// #include "person.h"
 using namespace std;
 
 // pass the constructor 
-Member::Member(int memberID, const string& name, const string& address,
-    const string& email) 
-    : memberID(memberID), Person(name, address, email) {
+Member::Member(int memberID, /*const string&*/ string name, /*const string&*/ string address,
+    /*const string&*/ string email) 
+    // : memberID(memberID), Person(name, address, email) 
+    {
 
     // this-> memberID;
     this-> setName(name);
