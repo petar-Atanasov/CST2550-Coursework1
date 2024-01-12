@@ -10,12 +10,8 @@ Book::Book(int bookID, string bookName, string authorFirstName, string authorLas
     this->bookName = bookName;
     this->authorFirstName = authorFirstName;
     this->authorLastName = authorLastName;
-    
-    //getter methods from book.h
-    
-
-
 }
+ //getter methods from book.h
 string Book::getbookID()
 {
     string bookid = to_string(bookID);
@@ -39,11 +35,12 @@ string Book::getAuthorLastName()
 
 string Book::getDueDate()
 {
-    return dueDate;
+    string ddate= to_string(dueDate);
+    return ddate;
 }
 
 // setter methods from book.h
-void Book::setDueDate(string date)
+void Book::setDueDate(time_t date)
 {
     dueDate = date;
 }
@@ -51,6 +48,7 @@ void Book::setDueDate(string date)
 // other methods from book.h
 void Book::returnBook()
 {
-    dueDate = "";
-    this-> borrower;
+    // dueDate = "";
+    this-> borrower = nullptr;
+    cout << "The book has been returned! " << endl;
 }

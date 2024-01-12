@@ -4,6 +4,7 @@
 #include "member.h"
 #include <iostream>
 #include <string> 
+#include <ctime>
 
 using namespace std;
 class Member;
@@ -15,7 +16,7 @@ class Book {
     string authorFirstName;     // Author First Name
     string authorLastName;      // Author Last Name 
     string bookType;            // The book type#
-    string dueDate;             // The due date of the book
+    time_t dueDate;             // The due date of the book
     Member* borrower;
 
     public:
@@ -31,10 +32,10 @@ class Book {
     string getDueDate();
 
     // setter methods 
-    void setDueDate(string date);
+    void setDueDate(time_t date);
 
     // other methods
     void returnBook();          //Return the occupied book
-    void borrowBook();          //Borrowing a book
+    void borrowBook(Member* borrower, time_t dueDate);          //Borrowing a book
 };
 #endif // BOOK_H
