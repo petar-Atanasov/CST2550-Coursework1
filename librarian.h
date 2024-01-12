@@ -5,19 +5,20 @@
 #include <string>
 #include "book.h"
 #include "member.h"
+// #include "person.h"
 
 using namespace std;
-
-class Librarian {
-
+class Member; 
+// class Person; 
+class Librarian : public Member/*, public Person, public Book*/ {
     private: 
     int staffID;
     int salary;
 
     public:
     // create the constructor and initilize librarian objects
-    Librarian(int staffID, string name, string address,
-    string email, int salary);
+    Librarian(int staffID, /*const string&*/ string name, /*const string&*/ string address,
+    /*const string&*/ string email, int salary);
 
     // other methods 
     void issueBook(int memberID, int bookID);
@@ -30,7 +31,7 @@ class Librarian {
     void displayBorrowedBooks(int memberID);
 
     // setter methods
-    void setStaffID(int staffID);
+    void setStaffID(int stafFID);
     void setSalary(int salary);
 
     //getter methods
