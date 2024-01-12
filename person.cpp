@@ -2,34 +2,33 @@
 using namespace std;
 
 //pass the constructor 
-Person::Person(const string& name, const string& address, const string& email)
-    : name(name), address(address), email(email){}    
+Person::Person(/*const string&*/ string name, /*const string&*/ string address, /*const string&*/ string email)
+    /*: name(name), address(address), email(email)*/{}    
 
 //setter methods from person.h
-    void Person::setName(const string& nm){
+    void Person::setName(/*const string&*/ string nm){
         name = nm;
+        cout << "Enter your name. "<< endl;
+        cin >> nm;
     }
-    void Person::setAddress(const string& adrs){
+    void Person::setAddress(/*const string&*/ string adrs){
         address = adrs;
+        cout << "Enter your address. "<< endl;
+        cin >> adrs;
     }
-    void Person::setEmail(const string& eml){
+    void Person::setEmail(/*const string&*/ string eml){
         email = eml;
+        cout << "Enter you email address. "<< endl;
+        cin >> eml;
     }
 
     //getter methods from person.h
     string Person::getName() const {
-        cout << "Enter your name. "<< endl;
-        cin >> name;
-
         return name;
     }
     string Person::getAddress() const {
-        cout << "Enter your address. "<< endl;
-        cin >> address;
         return address;
     }
     string Person::getEmail() const {
-        cout << "Enter you email address. "<< endl;
-        cin >> email;
         return email;
     }

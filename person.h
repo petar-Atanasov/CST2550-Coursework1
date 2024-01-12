@@ -3,8 +3,8 @@
 #define PERSON_H
 #include <iostream>
 #include <string>
-#include "member.h"
-#include "librarian.h"
+// #include "member.h"
+// #include "librarian.h"
 
 using namespace std;
 
@@ -17,11 +17,11 @@ private:
 
 public:
     // create the constructor
-    Person(const string& name, const string& address, const string& email);
+    Person(/*const string&*/ string name, /*const string&*/ string address, /*const string&*/ string email);
     // setter methods
-    void setName(const string &nm);
-    void setAddress(const string &adrs);
-    void setEmail(const string &eml);
+    void setName(/*const string&*/ string nm);
+    void setAddress(/*const string&*/ string adrs);
+    void setEmail(/*const string&*/ string eml);
 
     // getter methods
     string getName() const;
