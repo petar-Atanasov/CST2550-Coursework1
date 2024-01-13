@@ -1,34 +1,40 @@
+/*
+Petar Atanasov
+M00916537
+*/
 #include "person.h"
 using namespace std;
 
-//pass the constructor 
-Person::Person(/*const string&*/ string name, /*const string&*/ string address, /*const string&*/ string email)
-    /*: name(name), address(address), email(email)*/{}    
+// pass the default constructor 
+Person::Person(){}
 
-//setter methods from person.h
-    void Person::setName(/*const string&*/ string nm){
-        name = nm;
-        cout << "Enter your name. "<< endl;
-        cin >> nm;
-    }
-    void Person::setAddress(/*const string&*/ string adrs){
-        address = adrs;
-        cout << "Enter your address. "<< endl;
-        cin >> adrs;
-    }
-    void Person::setEmail(/*const string&*/ string eml){
-        email = eml;
-        cout << "Enter you email address. "<< endl;
-        cin >> eml;
-    }
+// pass the parameterized constructor
+Person::Person(string name, string address, string email) {}
 
-    //getter methods from person.h
-    string Person::getName() const {
-        return name;
-    }
-    string Person::getAddress() const {
-        return address;
-    }
-    string Person::getEmail() const {
-        return email;
-    }
+// setter methods from person.h
+void Person::setName(string nm)
+{
+    this->name = nm;
+}
+void Person::setAddress(string adrs)
+{
+    this->address = adrs;
+}
+void Person::setEmail(string eml)
+{
+    this->email = eml;
+}
+
+// getter methods from person.h
+string Person::getName()
+{
+    return name;
+}
+string Person::getAddress()
+{
+    return address;
+}
+string Person::getEmail()
+{
+    return email;
+}
