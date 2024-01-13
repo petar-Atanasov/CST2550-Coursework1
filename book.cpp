@@ -1,5 +1,8 @@
+/*
+Petar Atanasov
+M00916537
+*/
 #include "book.h"
-
 using namespace std;
 
 // pass the constructor 
@@ -42,7 +45,7 @@ string Book::getDueDate()
 // setter methods from book.h
 void Book::setDueDate(time_t date)
 {
-    dueDate = date;
+    this-> dueDate = date;
 }
 
 // other methods from book.h
@@ -50,5 +53,10 @@ void Book::returnBook()
 {
     // dueDate = "";
     this-> borrower = nullptr;
-    cout << "The book has been returned! " << endl;
+    cout << "The book has been returned!\n " << endl;
+}
+void Book::borrowBook(Member* borrower, time_t dueDate){
+    this-> borrower = borrower;
+
+    setDueDate(date);
 }

@@ -1,3 +1,7 @@
+/*
+Petar Atanasov
+M00916537
+*/
 #pragma once 
 #ifndef BOOK_H
 #define BOOK_H
@@ -8,7 +12,7 @@
 
 using namespace std;
 class Member;
-class Book {
+class Book{
     // private data members for the Book class
     private: 
     int bookID;                 // book ID
@@ -17,7 +21,7 @@ class Book {
     string authorLastName;      // Author Last Name 
     string bookType;            // The book type#
     time_t dueDate;             // The due date of the book
-    Member* borrower;
+    Member* borrower = nullptr;
 
     public:
     // get constructor and initilize book objects
@@ -36,6 +40,6 @@ class Book {
 
     // other methods
     void returnBook();          //Return the occupied book
-    void borrowBook(Member* borrower, time_t dueDate);          //Borrowing a book
+    void borrowBook(Member* borrower, time_t dueDate);         //Borrowing a book
 };
 #endif // BOOK_H
