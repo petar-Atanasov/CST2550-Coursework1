@@ -26,9 +26,9 @@ void Person::setAddress(string adrs)
     address = adrs;
 }
 void Person::setEmail(string eml)
-{   
+{
     regex rgxEml(("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+"));
-    do  
+    do
     {
         cout << "Enter your email address: " << endl;
         cin >> eml;
