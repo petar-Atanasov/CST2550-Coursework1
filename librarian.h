@@ -13,6 +13,8 @@ class Librarian: public Person{
 private:
     int staffID;
     int salary;
+    // create a vector to store your members
+    vector<Member> members;
 
 public:
     // create the constructor and initilize librarian objects
