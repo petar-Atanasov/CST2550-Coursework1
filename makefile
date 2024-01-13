@@ -22,5 +22,4 @@ book.o : book.cpp book.h
 .PHONY : clean
 clean : 
 	rm *.o
-	# rm *.h.gch
 	rm program
