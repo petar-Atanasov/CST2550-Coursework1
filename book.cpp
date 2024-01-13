@@ -58,5 +58,5 @@ void Book::returnBook()
 void Book::borrowBook(Member* borrower, time_t dueDate){
     this-> borrower = borrower;
 
-    setDueDate(date);
+    setDueDate(dueDate);
 }
