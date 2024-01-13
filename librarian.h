@@ -1,26 +1,24 @@
+/*
+Petar Atanasov
+M00916537
+*/
 #pragma once
 #ifndef LIBRARIAN_H
 #define LIBRARIAN_H
-#include <iostream>
-#include <string>
 #include "book.h"
-#include "member.h"
-// #include "person.h"
-
 using namespace std;
-class Member; 
-// class Person; 
-class Librarian : public Member/*, public Person, public Book*/ {
-    private: 
+
+class Person;
+class Librarian: public Person{
+private:
     int staffID;
     int salary;
 
-    public:
+public:
     // create the constructor and initilize librarian objects
-    Librarian(int staffID, /*const string&*/ string name, /*const string&*/ string address,
-    /*const string&*/ string email, int salary);
+    Librarian(int staffID, string name, string address, string email, int salary);
 
-    // other methods 
+    // other methods
     void issueBook(int memberID, int bookID);
     void returnBook(int memberID, int bookID);
     void calcFine(int memberID);
@@ -31,12 +29,12 @@ class Librarian : public Member/*, public Person, public Book*/ {
     void displayBorrowedBooks(int memberID);
 
     // setter methods
-    void setStaffID(int stafFID);
+    void setStaffID(int staffID);
     void setSalary(int salary);
 
-    //getter methods
+    // getter methods
     int getStaffID();
     int getSalary();
 };
 
-#endif //LIBRARIAN_H
+#endif // LIBRARIAN_H
