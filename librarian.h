@@ -15,6 +15,8 @@ private:
     int salary;
     // create a vector to store your members
     vector<Member> members;
+    // create a vector to store your books
+    vector<Book*> books;
 
 public:
     // create the constructor and initilize librarian objects
@@ -25,7 +27,7 @@ public:
     void returnBook(int memberID, int bookID);
     void calcFine(int memberID);
     // add member
-    void addMember();
+    void addMember(int memberID, string name, string address, string email);
 
     // show method
     void displayBorrowedBooks(int memberID);
