@@ -1,33 +1,34 @@
+/*
+Petar Atanasov
+M00916537
+*/
 #pragma once
 #ifndef MEMBER_H
 #define MEMBER_H
-// #include "book.h"
 #include "person.h"
-#include <iostream>
 #include <vector>
-#include <string>
 
 using namespace std;
 class Book;
-// class Person;
-class Member : public Book, public Person {
+class Person;
+class Member: public Person{
 
-// private:
-    protected:
+    // private:
+private:
     int memberID;
-    vector<Book> booksLoaned;
+    vector<Book*> booksLoaned;
 
 public:
     // create the constructor and initilize member objects
-    Member(int memberID, /*const string&*/ string name, /*const string&*/ string address,
-           /*const string&*/ string email);
+    Member(int memberID, string name, string address, string email);
 
+    //*******Encapsulation*******//
     // getter methods
-    string getMemberID() const;
-    vector<Book> getBooksBorrowed() const;
+    string getMemberID();
+    vector<Book*> getBooksBorrowed();
 
     // setter methods
-    void setBooksBorrowed(const Book& book);
+    void setBooksBorrowed(Book* book);
 };
 
 #endif // MEMBER_H

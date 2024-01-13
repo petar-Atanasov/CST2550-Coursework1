@@ -1,33 +1,33 @@
+/*
+Petar Atanasov
+M00916537
+*/
 #include "member.h"
-// #include "person.h"
 using namespace std;
 
-// pass the constructor 
-Member::Member(int memberID, /*const string&*/ string name, /*const string&*/ string address,
-    /*const string&*/ string email) 
-    // : memberID(memberID), Person(name, address, email) 
-    {
+// pass the constructor
+Member::Member(int memberID, string name, string address, string email)
+{
 
-    // this-> memberID;
-    this-> setName(name);
-    this-> setAddress(address);
-    this-> setEmail(email);
-
+    this->memberID = memberID;
+    this->setName(name);
+    this->setAddress(address);
+    this->setEmail(email);
 }
 // getter methods form member.h
-string Member::getMemberID() const
+string Member::getMemberID()
 {
     string memid = to_string(memberID);
     return memid;
 }
 
-vector<Book> Member::getBooksBorrowed() const
+vector<Book *> Member::getBooksBorrowed()
 {
     return booksLoaned;
 }
 
 // setter methods from member.h
-void Member::setBooksBorrowed(const Book& book)
+void Member::setBooksBorrowed(Book *book)
 {
     booksLoaned.push_back(book);
 }
