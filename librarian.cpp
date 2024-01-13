@@ -15,7 +15,16 @@ Librarian::Librarian(int staffID, string name, string address, string email, int
     this->salary = salary;
 }
 // other methods from librarian.h
-void Librarian::issueBook(int memberID, int bookID) {}
+void Librarian::issueBook(int memberID, int bookID)
+{
+    cout << "\n--- Member name: " << members[memberID].getName() << " ---"
+         << "\n--- Member ID: " << members[memberID].getMemberID() << " ---"
+         << "\n--- Book name: " << books[bookID - 1]->getbookName() << " ---"
+         << "\n--- Book ID: " << books[bookID - 1]->getbookID() << " ---";
+
+    // fix the book class borrower with this
+    books[bookID - 1]->borrowBook(&members[memberID], time(nullptr) + (3600 * 24 * 3));
+}
 void Librarian::returnBook(int memberID, int bookID) {}
 void Librarian::calcFine(int memberID)
 {
@@ -43,7 +52,7 @@ void Librarian::calcFine(int memberID)
         {
             double delayDate = difftime(currDate, book->getDueDate()) / (3600 * 24);
             double fnFBk = delayDate * 1.0;
-            // pass the variable for total amount and add it with fine for book 
+            // pass the variable for total amount and add it with fine for book
             toFis += fnFBk;
 
             cout << "The expired time to return the book is: " << delayDate
