@@ -17,7 +17,19 @@ Librarian::Librarian(int staffID, string name, string address, string email, int
 void Librarian::issueBook(int memberID, int bookID);
 void Librarian::returnBook(int memberID, int bookID);
 void Librarian::calcFine(int memberID);
-void Librarian::addMember();
+void Librarian::addMember(int memberID, string name, string address, string email){
+     // assign the size of members() vector to the variable memberID
+     memberID = members().size();
+     // setName from person.cpp to get the name
+     setName(name);
+     // setAddress form person.cpp to get the address
+     setAddress(address);
+     //setEmail form person.cpp to get the email and the regex for it 
+     setEmail(email);
+     //provide directly constructor argument and insert the element in the end 
+     members().emplace_back(memberID, name, address, email);
+    std::cout << "The member ID is: " << memberID << endl;
+}
 
 void Librarian::displayBorrowedBooks(int memberID);
 // setter methods from librarian.h
