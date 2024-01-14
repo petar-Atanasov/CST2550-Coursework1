@@ -25,11 +25,42 @@ void Librarian::issueBook(int memberID, int bookID)
     // fix the book class borrower with this
     books[bookID - 1]->borrowBook(&members[memberID], time(nullptr) + (3600 * 24 * 3));
 }
-void Librarian::returnBook(int memberID, int bookID) {}
+void Librarian::returnBook(int memberID, int bookID)
+{
+    // first check if memberid, bookid exist
+    if ((memberID < 0 || memberID >= members.size()) && bookID <= 0 || bookID > books.size())
+    {
+        cout << "This is an invalid member id: " << memberID
+             << " or invalid book id: " << bookID
+             << ". Try again!" << endl;
+
+        return;
+    }
+    Book* book = books[bookID - 1];
+    Member& member = members[memberID];
+    // here get the borrowed books into variable which is automaticly updated itself 
+    auto booksAreBorrowed = member.getBooksBorrowed();
+    //set a variable which is finding if book is being borrowed already 
+    auto booksFound = find(booksAreBorrowed.begin(), booksAreBorrowed.end(), book);
+
+    if(booksFound == booksAreBorrowed.end()){
+        cout << "No one has borrowed this book yet. "<< endl;
+        return;
+    } else {
+        //return the book
+        book-> returnBook();
+        // then calculate fine
+        calcFine(memberID); 
+        // and remove the member borrowed book
+        member.getBooksBorrowed().erase(booksFound);
+        
+    }
+
+}
 void Librarian::calcFine(int memberID)
 {
     // check for valid member id
-    if (memberID > 0 || memberID >= members.size())
+    if (memberID < 0 || memberID >= members.size())
     {
         cout << "This is an invalid member id: " << memberID << ". Try again!" << endl;
 
