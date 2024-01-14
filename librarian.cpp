@@ -97,8 +97,12 @@ void Librarian::calcFine(int memberID)
         }
     }
 }
-void Librarian::addMember(int memberID, string name, string address, string email)
+void Librarian::addMember()
 {
+    // assign the needed variables
+    int memberID;
+    string name, address, email;
+
     // setName from person.cpp to get the name
     setName(name);
     // setAddress form person.cpp to get the address

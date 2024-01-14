@@ -27,7 +27,7 @@ public:
     void returnBook(int memberID, int bookID);
     void calcFine(int memberID);
     // add member
-    void addMember(int memberID, string name, string address, string email);
+    void addMember();
 
     // show method
     void displayBorrowedBooks(int memberID);
