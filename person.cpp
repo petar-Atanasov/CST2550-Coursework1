@@ -3,7 +3,6 @@ Petar Atanasov
 M00916537
 */
 #include "person.h"
-#include <regex>
 using namespace std;
 
 // pass the default constructor
