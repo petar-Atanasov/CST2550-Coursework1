@@ -36,10 +36,9 @@ string Book::getAuthorLastName()
     return authorLastName;
 }
 
-string Book::getDueDate()
+time_t Book::getDueDate()
 {
-    string ddate= to_string(dueDate);
-    return ddate;
+    return dueDate;
 }
 
 // setter methods from book.h

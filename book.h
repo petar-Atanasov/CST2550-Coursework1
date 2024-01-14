@@ -10,7 +10,7 @@ M00916537
 #include <string> 
 #include <chrono> // use it for date manipulation
 #include <ctime>
-
+#include <algorithm> // used for to find vectors
 
 using namespace std;
 class Member;
@@ -35,7 +35,9 @@ class Book{
     string getbookName();
     string getAuthorFristName();
     string getAuthorLastName();
-    string getDueDate();
+    // otherwise gives and error messages when is string,
+    // and is not converted to time_t 
+    time_t getDueDate();
 
     // setter methods 
     void setDueDate(time_t date);
