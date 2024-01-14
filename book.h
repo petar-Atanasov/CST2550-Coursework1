@@ -7,7 +7,9 @@ M00916537
 #define BOOK_H
 #include "member.h"
 #include <iostream>
+#include <fstream>
 #include <string> 
+#include <sstream>
 #include <chrono> // use it for date manipulation
 #include <ctime>
 #include <algorithm> // used for to find vectors
