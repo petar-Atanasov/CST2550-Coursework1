@@ -12,33 +12,48 @@ Person::Person() {}
 Person::Person(string name, string address, string email) {}
 
 // setter methods from person.h
-void Person::setName(string nm)
-{   
+void Person::setName(string name)
+{
     cout << "\nWELCOME\n";
+    regex rgxNM("^ [a-z] [-a-z0-9_]*$");
 
     cout << "\nEnter your name: " << endl;
-    cin >> nm;
-    name = nm;
+    cin >> name;
+
+    while (!regex_match(name, rgxNM))
+    {
+        cout << "The entered name was wrong! Please trt again: " << endl;
+        cin >> name;
+    }
+    name = name;
 }
-void Person::setAddress(string adrs)
+void Person::setAddress(string address)
 {
+    regex rgxADDR("[A-Za-z0-9'.-s,]");
+
     cout << "\nEnter your address: " << endl;
-    cin >> adrs;
-    address = adrs;
+    cin >> address;
+
+    while (!regex_match(address, rgxADDR))
+    {
+        cout << "The entered address was wrong! Please trt again: " << endl;
+        cin >> address;
+    }
+    address = address;
 }
-void Person::setEmail(string eml)
+void Person::setEmail(string email)
 {
     regex rgxEml(("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+"));
 
     cout << "\nEnter your email address: " << endl;
-    cin >> eml;
+    cin >> email;
 
-    while (!regex_match(eml, rgxEml))
+    while (!regex_match(email, rgxEml))
     {
         cout << "The entered email was wrong! Please try again: " << endl;
-        cin >> eml;
+        cin >> email;
     }
-    email = eml;
+    email = email;
 }
 
 // getter methods from person.h
