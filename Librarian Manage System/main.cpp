@@ -62,7 +62,7 @@ int GMID()
 {
     vector<Member> members;
     // get a regex for members id
-    regex rgxMID("^[a-zA-Z0-9][a-zA-Z0-9_\-]{0,4}[a-zA-Z0-9]$");
+    regex rgxMID("^[0-9]+$");
     // set a string to hold the checkin
     string checkMemID = "";
 
@@ -101,7 +101,7 @@ int GBID()
 {
     vector<Book *> books;
     // get a regex for book ID
-    regex rgxBID("^\d+\/[A-Za-z0-9-]+$");
+    regex rgxBID("^[0-9]+$");
     // set a string to hold the checkin
     string checkBID = "";
 
@@ -213,7 +213,7 @@ string printMenu()
 // validation for librarain id
 bool verifyStaffID(string ID)
 {
-    regex rgxStaffID("^[a-zA-Z0-9][a-zA-Z0-9_\-]{0,4}[a-zA-Z0-9]$");
+    regex rgxStaffID("^[0-9]+$");
     return regex_match(ID, rgxStaffID);
 }
 // validation for librarian name
@@ -225,12 +225,12 @@ bool verifyStaffName(string name)
 
 void verifyLibrarianLog()
 {
-    cout << "WELCOME TO THE SAFF MENU.\n";
+    cout << "\nWELCOME TO THE STAFF MENU.\n";
 
-    cout << "\nEnter librarian details to continue: "
-         << "\n 0. for Staff ID.\n "
-         << "\n 1. for Staff Name.\n "
-         << "4. to Exit. " << endl;
+    cout << "\nEnter librarian details to continue:\n "
+         << "\n 0. for Staff ID. "
+         << "\n 1. for Staff Name. "
+         << "\n 4. to Exit. " << endl;
 
     // variable to hold user input
     string input = "";

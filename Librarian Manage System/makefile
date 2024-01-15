@@ -2,7 +2,10 @@ CXX = g++
 CXXFLAGS = -g -Wall -Wextra -Wpedantic
 
 .PHONY : all
-all : program
+all : program Catch2test
+
+Catch2test : test.cpp person.o member.o book.o librarian.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 program : main.cpp person.o member.o book.o librarian.o
 	$(CXX) $(CXXFLAGS) -o $@ $^
@@ -23,3 +26,4 @@ librarian.o : librarian.cpp librarian.h
 clean : 
 	rm *.o
 	rm program
+	rm Catch2test
