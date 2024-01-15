@@ -13,14 +13,16 @@ Person::Person(string name, string address, string email) {}
 
 // setter methods from person.h
 void Person::setName(string nm)
-{
-    cout << "Enter your name: " << endl;
+{   
+    cout << "\nWELCOME\n";
+
+    cout << "\nEnter your name: " << endl;
     cin >> nm;
     name = nm;
 }
 void Person::setAddress(string adrs)
 {
-    cout << "Enter your address: " << endl;
+    cout << "\nEnter your address: " << endl;
     cin >> adrs;
     address = adrs;
 }
@@ -28,7 +30,7 @@ void Person::setEmail(string eml)
 {
     regex rgxEml(("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+"));
 
-    cout << "Enter your email address: " << endl;
+    cout << "\nEnter your email address: " << endl;
     cin >> eml;
 
     while (!regex_match(eml, rgxEml))
