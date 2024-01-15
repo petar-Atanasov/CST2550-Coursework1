@@ -22,7 +22,7 @@ void Person::setName(string name)
 
     while (!regex_match(name, rgxNM))
     {
-        cout << "The entered name was wrong! Please trt again: " << endl;
+        cout << "The entered name was wrong! Please try again: " << endl;
         cin >> name;
     }
     name = name;
@@ -36,14 +36,14 @@ void Person::setAddress(string address)
 
     while (!regex_match(address, rgxADDR))
     {
-        cout << "The entered address was wrong! Please trt again: " << endl;
+        cout << "The entered address was wrong! Please try again: " << endl;
         cin >> address;
     }
     address = address;
 }
 void Person::setEmail(string email)
 {
-    regex rgxEml(("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+"));
+    regex rgxEml("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
 
     cout << "\nEnter your email address: " << endl;
     cin >> email;
