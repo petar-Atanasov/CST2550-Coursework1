@@ -15,7 +15,7 @@ Person::Person(string name, string address, string email) {}
 void Person::setName(string name)
 {
     cout << "\nWELCOME\n";
-    regex rgxNM("^ [a-z] [-a-z0-9_]*$");
+    regex rgxNM("[a-zA-Z -]+");
 
     cout << "\nEnter your name: " << endl;
     cin >> name;
@@ -29,7 +29,7 @@ void Person::setName(string name)
 }
 void Person::setAddress(string address)
 {
-    regex rgxADDR("[A-Za-z0-9'.-s,]");
+    regex rgxADDR("[a-zA-Z0-9 -]+");
 
     cout << "\nEnter your address: " << endl;
     cin >> address;
