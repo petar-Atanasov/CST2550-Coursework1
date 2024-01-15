@@ -228,60 +228,72 @@ void verifyLibrarianLog()
     cout << "\nWELCOME TO THE STAFF MENU.\n";
     // variable to hold user input
     string input = "";
-    cout << "\nEnter librarian details to continue:\n "
-         << "\n 0. for Staff ID. "
-         << "\n 1. for Staff Name. "
-         << "\n 4. to Exit. " << endl;
-    cin >> input;
-    // check the regex for librarian ID
-    while (input != "0" && input != "4")
-    {
-        cout << "Enter your Staff ID: " << endl;
-        cin >> input;
 
-        switch (verifyStaffID(input))
+    do
+    {
+
+        cout << "\nEnter librarian details to continue:\n "
+             << "\n 0. for Staff ID. "
+             << "\n 1. for Staff Name. "
+             << "\n 4. to Exit. " << endl;
+        cin >> input;
+        // check the regex for librarian ID
+        switch (stoi(input))
         {
-        case true:
-            if (input == "0")
+        case 0:
+            cout << "Enter your Staff ID: " << endl;
+            cin >> input;
+
+            if (verifyStaffID(input))
             {
-                // check regex for librarian name
-                while (input != "1" || input != "4")
+                do
+
                 {
                     cout << "Enter your Staff Name: " << endl;
                     cin >> input;
 
-                    switch (verifyStaffName(input))
+                    if (verifyStaffName(input))
                     {
-                    case true:
-                        if (input == "1")
-                        {
-                            return;
-                        }
-                        else if (input == "4")
-                        {
-                            exit(0);
-                        }
-                        else
-                        {
-                            cout << "Staff Name not recognised. " << endl;
-                        }
-                        break;
-
-                    default:
-                        cout << "Invalid name format " << endl;
-                        break;
+                        cout << "Staff details matched. Exiting.." << endl;
+                        return;
                     }
-                }
+                    else
+                    {
+                        cout << "Staff name does not match. Try again. " << endl;
+                    }
+                } while (true);
             }
             else
             {
-                cout << "Librarian details are not recognised. " << endl;
+                cout << "Staff id does not match. Try again. " << endl;
             }
-        default:
-            cout << "Staff ID not recognised. " << endl;
             break;
+
+        case 1:
+            cout << "Enter Staff Name: " << endl;
+            cin >> input;
+
+            if (verifyStaffName(input))
+            {
+                cout << "Staff details matched. Exiting.." << endl;
+                return;
+            }
+            else
+            {
+                cout << "Staff name does not match. Try again. " << endl;
+            }
+            break;
+
+        case 4:
+            cout << "Exiting the system. Goodbye! " << endl;
+            exit(0);
+
+            break;
+        default:
+            cout << "Invalid input. Please try again. " << endl;
         }
-    }
+
+    } while (true);
 }
 
 int main()
@@ -295,8 +307,12 @@ int main()
     // verify librarian login
     verifyLibrarianLog();
 
-    // show the menu
-    printMenu();
+    // show the menu and loop throught it until the user enters 6 to exit
+    string input = "";
+    while (input != "6")
+    {
+        input = printMenu();
+    }
 
     return 0;
 };
