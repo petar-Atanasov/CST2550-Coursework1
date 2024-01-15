@@ -13,19 +13,25 @@ void LMS()
 {
     cout << "\nOPENING LYBRARY MANAGMENT FILE\n";
 
-    // open the library_books.cvs
-    ifstream file("library_book.csv");
+    string file = "";
+    cout << "\nEnter your file name where the books are stored. For example(file.txt)\n";
+    cin >> file;
 
-    if (file.is_open())
+    // open the library_books.cvs
+    ifstream filename(file);
+
+    if (filename.is_open())
     {
         cout << "The file is open." << endl;
         // get the values of the library books file
         string bookID, bookName, pageCount,
             authorFirstName, authorLastName,
             bookType, line;
+        
+        vector<Book> books;
 
-        getline(file, line);
-        while (getline(file, line))
+        getline(filename, line);
+        while (getline(filename, line))
         {
             stringstream pushString(line);
             getline(pushString, bookID, ',');
@@ -33,22 +39,20 @@ void LMS()
             getline(pushString, pageCount, ',');
             getline(pushString, authorFirstName, ',');
             getline(pushString, authorLastName, ',');
-            getline(pushString, bookType, '.');
+            getline(pushString, bookType, ' ');
             // print the values and convert the bookId form string to int
             cout << stoi(bookID) << " --- " << bookName << " --- " << pageCount << " --- " << authorFirstName << " --- " << authorLastName << " --- " << bookType;
-
-            // vector<Book *> books;
-            vector<Book> books;
+            
             books.emplace_back(stoi(bookID), bookName, authorFirstName, authorLastName);
         }
 
         cout << "\n The library books are added. " << endl;
+        filename.close();
     }
     else
     {
-        file.fail();
-        cout << "The file failed to open.\n"
-             << "\nTry again." << endl;
+        cout << "\nThe file failed to open.\n"
+             << "Try again." << endl;
         exit(0);
     }
 }
@@ -282,6 +286,7 @@ void verifyLibrarianLog()
     }
 }
 
+
 int main()
 {
     // start message
@@ -292,6 +297,9 @@ int main()
 
     // verify librarian login
     verifyLibrarianLog();
+
+    // show the menu 
+    printMenu();
 
     return 0;
 };
