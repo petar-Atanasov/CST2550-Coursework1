@@ -27,7 +27,7 @@ void LMS()
         string bookID, bookName, pageCount,
             authorFirstName, authorLastName,
             bookType, line;
-        
+
         vector<Book> books;
 
         getline(filename, line);
@@ -42,7 +42,7 @@ void LMS()
             getline(pushString, bookType, ' ');
             // print the values and convert the bookId form string to int
             cout << stoi(bookID) << " --- " << bookName << " --- " << pageCount << " --- " << authorFirstName << " --- " << authorLastName << " --- " << bookType;
-            
+
             books.emplace_back(stoi(bookID), bookName, authorFirstName, authorLastName);
         }
 
@@ -219,22 +219,20 @@ bool verifyStaffID(string ID)
 // validation for librarian name
 bool verifyStaffName(string name)
 {
-    regex rgxStaffName("/(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/");
+    regex rgxStaffName("[a-zA-Z -]+");
     return regex_match(name, rgxStaffName);
 }
 
 void verifyLibrarianLog()
 {
     cout << "\nWELCOME TO THE STAFF MENU.\n";
-
+    // variable to hold user input
+    string input = "";
     cout << "\nEnter librarian details to continue:\n "
          << "\n 0. for Staff ID. "
          << "\n 1. for Staff Name. "
          << "\n 4. to Exit. " << endl;
-
-    // variable to hold user input
-    string input = "";
-
+    cin >> input;
     // check the regex for librarian ID
     while (input != "0" && input != "4")
     {
@@ -286,7 +284,6 @@ void verifyLibrarianLog()
     }
 }
 
-
 int main()
 {
     // start message
@@ -298,7 +295,7 @@ int main()
     // verify librarian login
     verifyLibrarianLog();
 
-    // show the menu 
+    // show the menu
     printMenu();
 
     return 0;
