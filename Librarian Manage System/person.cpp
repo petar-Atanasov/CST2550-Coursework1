@@ -12,48 +12,48 @@ Person::Person() {}
 Person::Person(string name, string address, string email) {}
 
 // setter methods from person.h
-void Person::setName(string name)
+void Person::setName(string nm)
 {
     cout << "\nWELCOME\n";
     regex rgxNM("[a-zA-Z -]+");
 
     cout << "\nEnter your name: " << endl;
-    cin >> name;
+    cin >> nm;
 
-    while (!regex_match(name, rgxNM))
+    while (!regex_match(nm, rgxNM))
     {
         cout << "The entered name was wrong! Please try again: " << endl;
-        cin >> name;
+        cin >> nm;
     }
-    name = name;
+    name = nm;
 }
-void Person::setAddress(string address)
+void Person::setAddress(string adrs)
 {
     regex rgxADDR("[a-zA-Z0-9 -]+");
 
     cout << "\nEnter your address: " << endl;
-    cin >> address;
+    cin >> adrs;
 
-    while (!regex_match(address, rgxADDR))
+    while (!regex_match(adrs, rgxADDR))
     {
         cout << "The entered address was wrong! Please try again: " << endl;
-        cin >> address;
+        cin >> adrs;
     }
-    address = address;
+    address = adrs;
 }
-void Person::setEmail(string email)
+void Person::setEmail(string eml)
 {
     regex rgxEml("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
 
     cout << "\nEnter your email address: " << endl;
-    cin >> email;
+    cin >> eml;
 
-    while (!regex_match(email, rgxEml))
+    while (!regex_match(eml, rgxEml))
     {
         cout << "The entered email was wrong! Please try again: " << endl;
-        cin >> email;
+        cin >> eml;
     }
-    email = email;
+    email = eml;
 }
 
 // getter methods from person.h
