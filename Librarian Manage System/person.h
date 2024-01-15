@@ -24,9 +24,9 @@ public:
     // create the parametized constructor
     Person(string name, string address, string email);
     // setter methods
-    void setName(string nm);
-    void setAddress(string adrs);
-    void setEmail(string eml);
+    void setName(string name);
+    void setAddress(string address);
+    void setEmail(string email);
 
     // getter methods
     string getName();
