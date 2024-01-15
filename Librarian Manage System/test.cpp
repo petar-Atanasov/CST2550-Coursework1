@@ -43,7 +43,7 @@ TEST_CASE("Test book file", "[Book]"){
 // create a test case for librarian
 TEST_CASE("Test librarian file", "[Librarian]"){
     Librarian librarian(00045, "Eren Jeager", "Paradis Island", "eren.Jeager@yahoo.com", 45000);
-    REQUIRE(librarian.getStaffID() == "00045");
+    REQUIRE(librarian.getStaffID() == 00045);
     REQUIRE(librarian.getName() == "Eren Jeager");
     REQUIRE(librarian.getAddress() == "Paradis Island");
     REQUIRE(librarian.getEmail() == "eren.Jeager@yahoo.com");
