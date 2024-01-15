@@ -282,7 +282,6 @@ void verifyLibrarianLog()
     }
 }
 
-
 int main()
 {
     // start message
