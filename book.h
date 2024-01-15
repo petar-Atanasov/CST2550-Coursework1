@@ -48,4 +48,4 @@ class Book{
     void returnBook();          //Return the occupied book
     void borrowBook(Member* borrower, time_t dueDate);         //Borrowing a book
 };
-#endif // BOOK_H
+#endif // BOOK_
