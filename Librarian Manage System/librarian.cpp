@@ -111,7 +111,7 @@ void Librarian::addMember()
     setEmail(email);
     // provide directly constructor argument and insert the element in the end
     members.emplace_back(memberID, name, address, email);
-    std::cout << "The member ID is: " << memberID << endl;
+    cout << "The member ID is: " << memberID << endl;
 }
 void Librarian::displayBorrowedBooks(int memberID)
 {
